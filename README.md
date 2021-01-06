@@ -10,7 +10,7 @@
 
 1. Create a project
    ```cmd
-   dotnet new console -lange F#
+   dotnet new console -lang F#
    ```
 1. Running a project
    ```cmd
@@ -18,6 +18,7 @@
    ```
 1. Debugging
    - Use the Ionide extension
+   - Can set up VS code debugging files, but annoying
 
 ## F# Notes
 
