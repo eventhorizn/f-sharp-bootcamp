@@ -42,6 +42,9 @@
         |> Option.defaultValue d
    ```
    - Example, not really needed
+1. When adding files, use ionide ext
+   - My guess, is you need to do reference stuff too
+   - File order matters in compilation
 
 ## Forward Piping
 

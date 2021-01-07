@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>_08_project_files_org</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Float.fs" />
+    <Compile Include="Student.fs" />
+    <Compile Include="Summary.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+</Project>
