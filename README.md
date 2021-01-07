@@ -139,3 +139,26 @@ module Student =
       |> tryFromString
       |> Option.defaultValue d
    ```
+
+## Discriminated Unions & Match Expressions
+
+1. Discriminated Unions
+
+```f#
+type TestResult =
+    | Absent
+    | Excused
+    | Voided
+    | Scored of float
+```
+
+1. Match Expressions
+
+```f#
+ let tryEffectiveScore (testResult: TestResult) =
+        match testResult with
+        | Absent -> Some 0.0
+        | Excused
+        | Voided -> None
+        | Scored score -> Some score
+```
