@@ -32,3 +32,17 @@
    ```f#
    let mutable person = "Anonymous Person"
    ```
+1. Arguments often have no brackets
+   - Separated by spaces
+   ```f#
+   let arrayIter argv =
+     Array.iter sayHello argv
+     printfn "Nice to meet you"
+   ```
+   - This serves a purpose: forward piping
+1. Forward pipe operator
+   ```f#
+   argv
+    |> Array.filter isValid
+    |> Array.iter sayHello
+   ```
