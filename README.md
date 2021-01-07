@@ -23,3 +23,12 @@
 ## F# Notes
 
 1. Last line in a function is what is returned
+1. Array: array.[0] (annoying .)
+1. Format specifiers are strongly typed
+   ```f#
+   printfn "Hello %s from my F# program" person
+   ```
+1. Minimize mutable variables
+   ```f#
+   let mutable person = "Anonymous Person"
+   ```
