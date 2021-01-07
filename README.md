@@ -32,6 +32,16 @@
    ```f#
    let mutable person = "Anonymous Person"
    ```
+1. When to use type annotations?
+   - Type inference is pretty good for the most part
+   - Type methods usually require type annotations
+   ```f#
+   let fromStringOr (d: float) (s: string) : float =
+        s
+        |> tryFromString
+        |> Option.defaultValue d
+   ```
+   - Example, not really needed
 
 ## Forward Piping
 
@@ -88,3 +98,41 @@ module Student =
     let printSummary (student: Student) =
         printfn "%s\t%s\t%0.1f\t%0.1f\t%0.1f" student.Name student.Id student.MeanScore student.MinScore student.MaxScore
 ```
+
+## Parameters
+
+1. Curried parameters
+
+   ```f#
+   let fromStringOr d s: float =
+   s
+   |> tryFromString
+   |> Option.defaultValue d
+   ```
+
+   - Function parameters which support partial application
+   - When an argument is supplied, the result is a function that expects any remaining params
+   - When all args have been supplied, the function returns a result
+
+   ```f#
+   let add a b =
+    a + b
+
+   let c = add 2 3
+
+   // not an error
+   // partial application of curried function
+   let d = add 2
+
+   let e = d 4
+   ```
+
+   - This causes lots of bugs due to it not throwing an error, but just returning a function
+
+1. Tupule Parameters
+   ```f#
+   let fromStringOr (d, s): float =
+      s
+      |> tryFromString
+      |> Option.defaultValue d
+   ```
