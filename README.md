@@ -50,6 +50,7 @@
    - {|...|} means anonymous record
    - You'd use anonymous records when returning tupules
      - Gives you named fields to use
+1. Arrays are mutable
 
 ## Forward Piping
 
@@ -182,3 +183,24 @@ type TestResult =
 
 - Use rarely as when you add a new item in the union, you may forget to add a handle in the match expression
   - Which would then hit the default case
+
+## Array Comprehension
+
+```f#
+let todayIsThursday() =
+   DateTime.Now.DayOfWeek = DayOfWeek.Thursday
+
+let isEven x =
+   x % 2 = 0
+
+// The code can be complex
+let evenNums =
+   [|
+      if todayIsThursday() then 42
+      for i in 1..9 do
+            let x = i * i
+            if x |> isEven then
+               x // implicit yield
+      999
+   |]
+```
