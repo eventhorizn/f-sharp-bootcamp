@@ -61,8 +61,22 @@ let main argv =
         printfn "%s:" (color.ToString())
         bricks
         |> Array.iter Brick.printConsole
-        printfn ""
-    )
+        printfn "")
     printfn ""
 
+    printfn "Grouped by studcount (Array.groupBy):"
+    let groupedByStudCount = 
+        bricks
+        |> Array.groupBy(fun b -> b.StudRows * b.StudColumns)
+
+    groupedByStudCount
+    // |> Array.sortBy (fun (studCount, _) ->
+    //     studCount)
+    |> Array.sortBy fst
+    |> Array.iter (fun (studCount, bricks) ->
+        printfn "%i stud:" studCount
+        bricks
+        |> Array.iter Brick.printConsole
+        printfn "")
+    printfn ""
     0 
