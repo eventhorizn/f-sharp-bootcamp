@@ -45,6 +45,9 @@
 1. When adding files, use ionide ext
    - My guess, is you need to do reference stuff too
    - File order matters in compilation
+1. Records vs Anonymous Records
+   - {...} means record type
+   - {|...|} means anonymous record
 
 ## Forward Piping
 
@@ -162,3 +165,18 @@ type TestResult =
         | Voided -> None
         | Scored score -> Some score
 ```
+
+- The default case
+
+  ```f#
+  let nameParts (s: string) =
+        let elements = s.Split(',')
+        match elements with
+        | [|surname; givenName|] ->
+           surname.Trim(), givenName.Trim()
+        | _ ->
+           raise (System.FormatException(sprintf "Invalid name format: \"%s\"" s))
+  ```
+
+- Use rarely as when you add a new item in the union, you may forget to add a handle in the match expression
+  - Which would then hit the default case
