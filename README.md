@@ -48,6 +48,8 @@
 1. Records vs Anonymous Records
    - {...} means record type
    - {|...|} means anonymous record
+   - You'd use anonymous records when returning tupules
+     - Gives you named fields to use
 
 ## Forward Piping
 
