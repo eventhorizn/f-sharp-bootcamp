@@ -204,3 +204,31 @@ let evenNums =
       999
    |]
 ```
+
+## Sequences
+
+1. Similar to array, but it doesn't store everything like an Array
+1. Type **IEnumerable**
+1. Generates values on demand
+
+```f#
+let totalSeq =
+   seq { for i in 1..1000 -> i * i }
+   |> Seq.sum
+```
+
+1. If you consume them multiple times, you'd be calculating them multiple times
+   ```f#
+   let totalSeq =
+      seq { for i in 1..1000 -> i * i }
+      |> Seq.sum
+      |> seq.cache
+   ```
+   - `Seq.toArray`
+1. When to use a sequence?
+   - Collection only exists to be summarized or piped
+   - Long in theory but only some elements accessed
+1. When to use an array?
+   - Iterated over/consumed multiple times
+   - Elements access by index
+   - You need to test your program w/ realistic amounts of data
