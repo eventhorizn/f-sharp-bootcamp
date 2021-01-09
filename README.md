@@ -232,3 +232,14 @@ let totalSeq =
    - Iterated over/consumed multiple times
    - Elements access by index
    - You need to test your program w/ realistic amounts of data
+
+## Lists
+
+1. Similar to arrays, but immutable
+1. It's also a linked list, not a contiguous block of memory
+
+# Next Steps
+
+1. Nuget
+1. Option.map, Option.bind
+1. SAFE Stack and Fable for Web UI development
